@@ -4,11 +4,10 @@ const port = 3000
 
 
 //use express router
-app.use('/',require('./routes/index'))
+app.use('/',require('./routes/index'));
+app.use('/users',require('./routes/users'));
 
-app.get('/', (req, res) =>{
-    res.send('Hello World!')
-});
+
 
 app.listen(port, (err) => {
     if (err) {
