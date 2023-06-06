@@ -23,11 +23,11 @@
                                         Sign-Up to create your
                                         <span class="text-black">Social-Ape</span> Account
                                     </p>
-                                    <form class="mx-1 mx-md-4" action="users/create" method="post">
+                                    <form class="mx-1 mx-md-4" action="/users/create" method="post">
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="email" name="email" class="form-control" placeholder="Enter your Email" />
+                                                <input type="email" name="email" class="form-control" placeholder="Enter your Email" required/>
                                                 <label class="form-label" for="email" style="color: black">Email</label>
                                             </div>
                                         </div>
@@ -35,7 +35,7 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="password" name="password" class="form-control" placeholder="Enter your Password" />
+                                                <input type="password" name="password" class="form-control" placeholder="Enter your Password" required/>
                                                 <label class="form-label" for="password"
                                                     style="color: black">Password</label>
                                             </div>
@@ -43,8 +43,8 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="password" name="password" class="form-control"
-                                                    placeholder="Re enter your Password" />
+                                                <input type="password" name="confirm_password" class="form-control"
+                                                    placeholder="Re enter your Password" required/>
                                                 <label class="form-label" for="password"
                                                     style="color: black">Password</label>
                                             </div>
@@ -52,8 +52,8 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="text" name="username" class="form-control"
-                                                    placeholder="Enter your User Name" />
+                                                <input type="text" name="name" class="form-control"
+                                                    placeholder="Enter your User Name" required/>
                                                 <label class="form-label" for="username"
                                                     style="color: black">User Name</label>
                                             </div>
