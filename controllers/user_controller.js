@@ -1,13 +1,19 @@
 const User=require('../models/user');
 
 module.exports.profiles=(req,res)=>{
-    res.send('<h1>Profile Page</h1>');
+    res.render('user_profile')
 }
-
 module.exports.userSignUp=(req,res)=>{
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile')
+    }
     res.render('user_sign_up')
+
 }
 module.exports.userSignIn=(req,res)=>{
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile')
+    }
     res.render('user_sign_in');
 }
 module.exports.create=async (req,res)=>{
@@ -32,12 +38,16 @@ module.exports.create=async (req,res)=>{
             }
         }
     )
-
 }
 module.exports.createSession=(req,res)=>{
-    
+    //! steps:
+    //* find the user
+    //* handle user found in session
+    //* handle session creation
+    //* handle user not found
+    res.redirect('/users/profile');
 }
 /*cookies:
 * it is used to store the data in the session
-* identity is stored
+* identity is stored in the browser
 */
