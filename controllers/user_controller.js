@@ -1,7 +1,9 @@
+const Post = require('../models/posts');
 const User=require('../models/user');
 
-module.exports.profiles=(req,res)=>{
-    res.render('user_profile')
+module.exports.profiles=async (req,res)=>{
+    let val= await Post.find({user:req.user.id}).populate('user').exec();
+    res.render('user_profile',{postMessage:val});
 }
 module.exports.userSignUp=(req,res)=>{
     if(req.isAuthenticated()){
@@ -46,6 +48,13 @@ module.exports.createSession=(req,res)=>{
     //* handle session creation
     //* handle user not found
     res.redirect('/users/profile');
+}
+module.exports.userSignOut=(req,res)=>{
+    req.logout(function(err) {
+        if (err) { return console.error(err); }
+        res.clearCookies;
+        res.redirect('/');
+      });
 }
 /*cookies:
 * it is used to store the data in the session
